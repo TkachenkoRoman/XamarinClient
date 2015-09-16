@@ -29,6 +29,16 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>True</AndroidUseSharedRuntime>
     <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkSkip />
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <BundleAssemblies>False</BundleAssemblies>
+    <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi,armeabi-v7a,x86</AndroidSupportedAbis>
+    <AndroidStoreUncompressedFileExtensions />
+    <MandroidI18n />
+    <Debugger>Xamarin</Debugger>
+    <AndroidEnableMultiDex>False</AndroidEnableMultiDex>
+    <DevInstrumentationEnabled>True</DevInstrumentationEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -74,6 +84,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationManager.cs" />
     <Compile Include="DataElem.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -82,7 +93,9 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
@@ -97,6 +110,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\config.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />

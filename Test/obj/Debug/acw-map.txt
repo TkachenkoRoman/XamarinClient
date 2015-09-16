@@ -1,0 +1,8 @@
+Test.MainActivity, Test;md506ee150bf8cb4fa2e12aa1a945ce2c24.MainActivity
+Test.MainActivity, Test, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md506ee150bf8cb4fa2e12aa1a945ce2c24.MainActivity
+Test.MainActivity;md506ee150bf8cb4fa2e12aa1a945ce2c24.MainActivity
+test.MainActivity;md506ee150bf8cb4fa2e12aa1a945ce2c24.MainActivity
+OxyPlot.Xamarin.Android.PlotView, OxyPlot.Xamarin.Android;md589a1fff84fc009568a7e522f954205e0.PlotView
+OxyPlot.Xamarin.Android.PlotView, OxyPlot.Xamarin.Android, Version=2015.1.999.0, Culture=neutral, PublicKeyToken=null;md589a1fff84fc009568a7e522f954205e0.PlotView
+OxyPlot.Xamarin.Android.PlotView;md589a1fff84fc009568a7e522f954205e0.PlotView
+oxyplot.xamarin.android.PlotView;md589a1fff84fc009568a7e522f954205e0.PlotView

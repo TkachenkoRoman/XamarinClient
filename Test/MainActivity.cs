@@ -32,9 +32,14 @@ namespace Test
         private LineSeries normalPointsSeries;
         private PlotView plotView;
 
+        private ConfigurationManager configManager;
+
         // signalr connection
         private IHubProxy HubProxy { get; set; }
-        const string ServerURI = "http://192.168.1.44:8080/signalr";
+        //const string ServerURI = "http://192.168.1.44:8080/signalr";
+        //const string ServerURI = "http://warm-beach-3063.herokuapp.com/signalr";
+        string ServerURI;
+
         private HubConnection Connection { get; set; }
         private bool isPaused { get; set; }
         private int delay;
@@ -47,12 +52,14 @@ namespace Test
         {
             RequestWindowFeature(WindowFeatures.NoTitle);
             base.OnCreate(bundle);
+            configManager = new ConfigurationManager(Assets.Open("config.xml"));
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
             IntitializeControls();
             InitializeChart();
 
+            ServerURI = configManager.Get("ServerURI");
             isPaused = false;
             writeToBuffer = false;
             buttonResumeRealFlow.Visibility = ViewStates.Invisible;
@@ -90,7 +97,7 @@ namespace Test
         {
             double offset = 0;
             if (delay != 0)
-                offset = ((double)delay) / 1000.0;
+                offset = ((double)delay) / 1000.0;  // offset in seconds
             currentTimeOffset += offset; // offset in seconds
             try
             {
@@ -107,7 +114,7 @@ namespace Test
 
         private void UpdateChart()
         {
-            //RunOnUiThread(() => { plotView.InvalidatePlot(); }); // not working?
+            //RunOnUiThread(() => { plotView.InvalidatePlot(); }); alternative
             RunOnUiThread(() => { plotView.Model.InvalidatePlot(true); });
         }
 
